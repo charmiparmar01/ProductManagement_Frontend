@@ -1,0 +1,55 @@
+.add{
+    margin-left: 500px;
+    margin-top: 30px;
+}
+
+.addpro{
+    font-size: 35px;
+    margin-left: 170px;
+    color: rgb(152, 44, 44);
+    
+}
+
+.msg{
+    font-size: 25px;
+    margin-left: 100px;
+}
+
+form {
+    padding:  20px;
+    border: 2px solid black ;
+    margin-right: 450px;
+    font-size: 20px;
+}
+
+form input{
+    width: 450px;
+    height: 30px;
+    font-size: 20px;
+}
+
+form select{
+    width: 457px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.option{
+    background-color: rgb(152, 44, 44);
+    color: white;
+}
+
+.btn{
+    height: 50px;
+    width: 150px;
+    font-size: 25px;
+    margin-left: 150px;
+    background-color: rgb(152, 44, 44);
+    color: white;
+}
+
+.btn:hover{
+    background-color: white;
+    color: rgb(152, 44, 44);
+}
+
