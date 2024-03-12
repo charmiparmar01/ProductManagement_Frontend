@@ -30,6 +30,7 @@ const EditProduct = () => {
           .getProductById(id)
           .then((res) => {
             setProduct(res.data);
+          
           })
           .catch((error) => {
             console.log(error);
@@ -48,6 +49,7 @@ const EditProduct = () => {
           .editProduct(product)
           .then((res) => {
             navigate("/Products");
+            
           })
           .catch((error) => {
             console.log(error);
