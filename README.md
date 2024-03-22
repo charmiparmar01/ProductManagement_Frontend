@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Product Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Product Management System built with Spring Boot, React.js, Postman API, MySQL database, and Hibernate. It allows users to manage products and categories efficiently.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+In today's competitive market, efficient management of products and categories is crucial for businesses to stay organized, optimize operations, and enhance productivity. The **Product Management System** offers a user-friendly interface for managing a diverse range of products and categories effortlessly.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Add, delete, edit, get single, and get all products
+- Get a list of products for a specific category
+- Add, delete categories
+- Manage categories, where one category can contain many products
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- Spring Boot
+- React.js
+- Postman API
+- MySQL database
+- Hibernate
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development Tools
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Visual Studio Code
+- IntelliJ IDEA
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- JDK (Java Development Kit)
+- Node.js and npm (Node Package Manager)
+- MySQL database server
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Key Features
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Product Management**: Users can easily add, delete, edit, and retrieve individual products. The system provides comprehensive functionalities to manage product details, including names, descriptions, prices, and quantities.
+  
+- **Category Management**: Organizing products into categories is simplified with the system's category management capabilities. Users can create, update, and delete categories, facilitating better organization and navigation of products.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Relationship Mapping**: The system allows establishing relationships between products and categories, enabling efficient categorization and retrieval of products based on specific categories.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **RESTful API Integration**: Seamless integration with Postman API ensures easy communication between the frontend and backend components of the system. This enables smooth data exchange and enhances overall system performance.
 
-## Learn More
+- **Database Persistence**: Utilizing MySQL database and Hibernate ORM, the system ensures robust data persistence and efficient retrieval of product and category information.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### How It Works
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The **Product Management System** comprises a backend implemented with **Spring Boot**, providing a RESTful API for data manipulation, and a frontend built with **React.js**, offering an intuitive user interface for interacting with the system. Users can perform various operations such as adding, editing, and deleting products, as well as managing categories, all through a user-friendly web interface.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
