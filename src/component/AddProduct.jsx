@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import productService from "../service/product.service";
+import categoryService from "../service/category.service";
 import './AddProduct.css'
 
 const AddProduct = () => {
@@ -9,7 +10,10 @@ const AddProduct = () => {
         description: "",
         price: "",
         status: "",
+        categoryId: "",
       });
+
+      const [categories, setCategories] = useState([]);
 
       const options = [
         {label1: 'Available'},
@@ -18,6 +22,18 @@ const AddProduct = () => {
       
     
       const [msg, setMsg] = useState("");
+
+      useEffect(() => {
+        // Fetch categories when component mounts
+        categoryService
+          .getAllCategory()
+          .then((res) => {
+            setCategories(res.data); // Set category options
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }, []);
     
       const handleChange = (e) => {
         const value = e.target.value;
@@ -37,6 +53,7 @@ const AddProduct = () => {
               description: "",
               price: "",
               status: "",
+              categoryId: "", 
             });
           })
           .catch((error) => {
@@ -93,6 +110,21 @@ const AddProduct = () => {
               ))}
             </select>
                   </div><br></br>
+                  <div>
+              <label>Select Category:</label>
+              <select
+                name="categoryId"
+                value={product.categoryId}
+                onChange={(e) => handleChange(e)}
+              >
+                <option value="">Select Category</option>
+                {categories.map((category) => (
+                  <option key={category.id} value={category.id}>
+                    {category.categoryName}
+                  </option>
+                ))}
+              </select>
+            </div><br></br>
                   
                   <button className="btn">Add</button>
                 </form>

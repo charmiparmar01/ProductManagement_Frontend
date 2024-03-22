@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from "react-router-dom";
-import productService from "../service/product.service";
 import './EditProduct.css'
+import categoryService from '../service/category.service';
 
-const EditProduct = () => {
-    const [product, setProduct] = useState({
+const EditCategory = () => {
+    const [category, setCategory] = useState({
         id: "",
-        productName: "",
+        categoryName: "",
         description: "",
-        price: "",
-        status: "",
+       
       });
 
       
@@ -26,10 +25,10 @@ const EditProduct = () => {
       const [msg, setMsg] = useState("");
     
       useEffect(() => {
-        productService
-          .getProductById(id)
+        categoryService
+          .getCategoryById(id)
           .then((res) => {
-            setProduct(res.data);
+            setCategory(res.data);
           })
           .catch((error) => {
             console.log(error);
@@ -38,16 +37,16 @@ const EditProduct = () => {
     
       const handleChange = (e) => {
         const value = e.target.value;
-        setProduct({ ...product, [e.target.name]: value });
+        setCategory({ ...category, [e.target.name]: value });
       };
     
-      const ProductUpdate = (e) => {
+      const CategoryUpdate = (e) => {
         e.preventDefault();
     
-        productService
-          .editProduct(product)
+        categoryService
+          .editCategory(category)
           .then((res) => {
-            navigate("/Products");
+            navigate("/Category");
           })
           .catch((error) => {
             console.log(error);
@@ -59,18 +58,18 @@ const EditProduct = () => {
     <>
       <div>
             <div className="edi">
-              <div className="edipro">Edit Product</div><br></br>
+              <div className="edipro">Edit Category</div><br></br>
               {msg && <p className="msg">{msg}</p>}<br></br>
 
               <div>
-                <form onSubmit={(e) => ProductUpdate(e)}>
+                <form onSubmit={(e) => CategoryUpdate(e)}>
                   <div>
-                    <label>Enter Product Name</label>
+                    <label>Enter Category Name</label>
                     <input
                       type="text"
-                      name="productName"
+                      name="categoryName"
                       onChange={(e) => handleChange(e)}
-                      value={product.productName}
+                      value={category.categoryName}
                     />
                   </div><br></br>
 
@@ -80,27 +79,10 @@ const EditProduct = () => {
                       type="text"
                       name="description"
                       onChange={(e) => handleChange(e)}
-                      value={product.description}
+                      value={category.description}
                     />
                   </div><br></br>
-                  <div>
-                    <label>Enter Price</label>
-                    <input
-                      type="text"
-                      name="price"
-                      onChange={(e) => handleChange(e)}
-                      value={product.price}
-                    />
-                  </div><br></br>
-
-                  <div>
-                    <label>Enter Status:</label><br></br>
-                    <select name='status' value={product.status} onChange={(e) => handleChange(e)}>
-              {options.map(option => (
-                <option value={option.value} name='type'>{option.label1}{option.label2}</option>
-              ))}
-            </select>
-                  </div><br></br>
+                 
                   <button className='btn'>Update</button>
                 </form>
               </div>
@@ -110,4 +92,4 @@ const EditProduct = () => {
   )
 }
 
-export default EditProduct
+export default EditCategory

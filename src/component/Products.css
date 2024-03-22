@@ -53,4 +53,13 @@ table th{
     font-size: 20px;
 }
 
+.catname{
+    text-decoration: none;
+    color: black;
+}
+
+.catname:hover{
+    color: rgb(152, 44, 44);
+}
+
 

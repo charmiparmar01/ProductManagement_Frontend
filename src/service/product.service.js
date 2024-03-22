@@ -5,7 +5,7 @@ const API_URL = "http://localhost:8080";
 class ProductService {
 
     saveProduct(product) {
-        return axios.post(API_URL + "/saveProduct", product);
+        return axios.post(API_URL + "/saveProduct/10", product);
     }
 
     getAllProduct() {
@@ -17,11 +17,15 @@ class ProductService {
     }
 
     deleteProduct(id) {
-        return axios.get(API_URL + "/deleteProduct/" + id);
+        return axios.delete(API_URL + "/deleteProduct/" + id);
     }
 
     editProduct(product) {
-        return axios.post(API_URL + "/editProduct/" + product.id, product);
+        return axios.patch(API_URL + "/editProduct/" + product.id, product);
+    }
+
+    getProductsByCategory(categoryId) {
+        return axios.get(API_URL + "/getProductsByCategory/" +categoryId);
     }
 
 }

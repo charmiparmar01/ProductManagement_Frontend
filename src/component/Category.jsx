@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
-import productService from "../service/product.service";
+import categoryService from "../service/category.service";
 import './Products.css'
 
 
-const Products = () => {
-    const [productList, setProductList] = useState([]);
+const Category = () => {
+    const [categoryList, setCategoryList] = useState([]);
     
   const [msg, setMsg] = useState("");
   useEffect(() => {
@@ -13,10 +13,10 @@ const Products = () => {
   }, []);
 
   const init = () => {
-    productService
-      .getAllProduct()
+    categoryService
+      .getAllCategory()
       .then((res) => {
-        setProductList(res.data);
+        setCategoryList(res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -24,9 +24,9 @@ const Products = () => {
   };
 
 
-  const deleteProduct = (id) => {
-    productService
-      .deleteProduct(id)
+  const deleteCategory = (id) => {
+    categoryService
+      .deleteCategory(id)
       .then((res) => {
         setMsg("Delete Sucessfully");
         init();
@@ -42,7 +42,7 @@ const Products = () => {
       <div>
             <div className="all">
               <div className="allpro">
-                All Product List<br></br>
+                All Category List<br></br>
                 {msg && <p className='msg'>{msg}</p>}<br></br>
               </div>
 
@@ -51,29 +51,25 @@ const Products = () => {
                   <thead>
                     <tr>
                       <th>Sl No</th>
-                      <th>Product Name</th>
+                      <th>Category Name</th>
                       <th>Description</th>
-                      <th>Price</th>
-                      <th>Status</th>
                     
                      
                     </tr><br></br>
                   </thead>
                   <tbody>
-                    {productList.map((p, num) => (
+                    {categoryList.map((p, num) => (
                       <tr className='allitem'>
                         <td>{num + 1}</td>
-                        <td>{p.productName}</td>
+                        <td><Link to={'/Products'} className='catname'>{p.categoryName}</Link></td>
                         <td>{p.description}</td>
-                        <td>{p.price}</td>
-                        <td>{p.status}</td>
-                      
+                       
                         <td>
-                          <button className='delete'><Link to={'editProduct/'+p.id} className='edit'>
+                          {/* <button className='delete'><Link to={'editCategory/'+p.id} className='edit'>
                             Edit
-                          </Link></button>
-                          
-                          <button onClick={() => deleteProduct(p.id)} className='delete'>Delete</button>
+                    </Link></button>*/}
+                           
+                          <button onClick={() => deleteCategory(p.id)} className='delete'>Delete</button>
                         </td>
                       </tr>
                     ))}
@@ -86,4 +82,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Category
