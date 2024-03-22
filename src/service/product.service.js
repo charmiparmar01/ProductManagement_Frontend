@@ -5,7 +5,7 @@ const API_URL = "http://localhost:8080";
 class ProductService {
 
     saveProduct(product) {
-        return axios.post(API_URL + "/saveProduct/10", product);
+        return axios.post(API_URL + "/saveProduct/13", product);
     }
 
     getAllProduct() {
