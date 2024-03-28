@@ -58,18 +58,18 @@ const Category = () => {
                     </tr><br></br>
                   </thead>
                   <tbody>
-                    {categoryList.map((p, num) => (
-                      <tr className='allitem'>
+                    {categoryList.map((c, num) => (
+                      <tr className='allitem' key={c.id}>
                         <td>{num + 1}</td>
-                        <td><Link to={'/Products'} className='catname'>{p.categoryName}</Link></td>
-                        <td>{p.description}</td>
+                        <td><Link to={'/Products/' +c.id} className='catname'>{c.categoryName}</Link></td>
+                        <td>{c.description}</td>
                        
                         <td>
                           {/* <button className='delete'><Link to={'editCategory/'+p.id} className='edit'>
                             Edit
                     </Link></button>*/}
                            
-                          <button onClick={() => deleteCategory(p.id)} className='delete'>Delete</button>
+                          <button onClick={() => deleteCategory(c.id)} className='delete'>Delete</button>
                         </td>
                       </tr>
                     ))}

@@ -44,7 +44,7 @@ const AddProduct = () => {
         e.preventDefault();
     
         productService
-          .saveProduct(product)
+          .saveProduct(product,product.categoryId)
           .then((res) => {
             console.log("Product Added Sucessfully");
             setMsg("Product Added Sucessfully");

@@ -21,11 +21,12 @@ const App = () => {
       <Route path='/Home' element={<Home />}></Route>
       <Route path='/Products' element={<Products />}></Route>
         <Route path='/addProduct' element={<AddProduct />}></Route>
-        <Route path='/Products/editproduct/:id' element={<EditProduct/>}></Route>
+        <Route path='/Products/:categoryId/editproduct/:id' element={<EditProduct/>}></Route>
         <Route path='/Category' element={<Category />}></Route>
         <Route path='/addCategory' element={<AddCategory />}></Route>
         <Route path='/ProductsByCategory' element={<ProductsByCategory />}></Route>
         <Route path='/Category/editcategory/:id' element={<EditCategory/>}></Route>
+        <Route path="/Products/:categoryId" element={<Products/>}></Route>
       </Routes>
     </Router>
     </div>

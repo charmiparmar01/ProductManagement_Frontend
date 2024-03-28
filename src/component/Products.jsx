@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import productService from "../service/product.service";
 import './Products.css'
 
 
 const Products = () => {
+  const { categoryId } = useParams();
     const [productList, setProductList] = useState([]);
     
   const [msg, setMsg] = useState("");
   useEffect(() => {
     init();
-  }, []);
+  }, [categoryId]);
 
   const init = () => {
     productService
-      .getAllProduct()
+      .getProductsByCategory(categoryId)
       .then((res) => {
         setProductList(res.data);
       })
@@ -61,7 +62,7 @@ const Products = () => {
                   </thead>
                   <tbody>
                     {productList.map((p, num) => (
-                      <tr className='allitem'>
+                      <tr className='allitem' key={p.id}>
                         <td>{num + 1}</td>
                         <td>{p.productName}</td>
                         <td>{p.description}</td>
